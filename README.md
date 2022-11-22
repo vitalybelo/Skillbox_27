@@ -52,12 +52,5 @@
 
 Чтобы лучше представлять структуру дерева и понимать, как получать его вершину, взгляните на данный метод:
 
-Branch getTopBranch()
-{
-//Если это дерево
-if (parent == nullptr) return nullptr;
-//Если это средняя ветка
-if (parent->parent == nullptr) return parent;
-//Если это маленькая ветка
-return parent->getTopBranch();
-}*
+![img.png](img.png)
+
