@@ -38,7 +38,7 @@ Branch* generateTree (const string &name) {
 
     auto* tree = new Branch("TREE", nullptr);           // корневой узел (он же ствол)
     auto* branch1 = new Branch("BIG BRANCHES", tree);   // узел "большие ветки" (или "Бельдяшки")
-    tree->addBranch(branch1);                                   // единственная ветка корневого узла
+    tree->addBranch(branch1);
 
     for (int i = 0; i < bigDist(gen); i++) {
         // добавляем большие ветки
