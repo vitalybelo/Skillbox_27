@@ -19,6 +19,7 @@ public:
 
     const std::string &getHouseKeeper() const;
     const std::vector<Branch *> &getBranch() const;
-    Branch *getParent() const;
+    Branch* getBranchAt(int index);
+    Branch* getParent() const;
 
 };

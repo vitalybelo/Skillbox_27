@@ -9,22 +9,12 @@ Branch* generateTree (const string &name);
 
 int main() {
 
-
     Branch* tree = generateTree("T1_");
 
-
-    cout << "TREE: " << tree->size() << endl;
-    cout << "BIG BRANCH: " << tree->getBranch().at(0)->getBranch().size() << endl;
-
-    Branch* t = tree->getBranch().at(0);
-    cout << "\tNames: ";
-    for (int i = 0; i < t->size(); i++) {
-        Branch* b1 = t->getBranch().at(i);
-        cout << b1->getHouseKeeper() << ", ";
-
-
-    }
-    cout << endl;
+    cout << "TREE: " << tree->getBranch().size() << endl;
+    cout << "BIG BRANCH: " << tree->getBranchAt(0)->getBranch().size() << endl;
+    cout << "BIG BRANCH: " << tree->getBranchAt(0)->getBranchAt(0)->getHouseKeeper() << endl;
+    cout << "MIDDLE BRANCH: " << tree->getBranchAt(0)->getBranchAt(0)->getBranchAt(0)->getHouseKeeper() << endl;
 
     return 0;
 }
@@ -36,21 +26,24 @@ Branch* generateTree (const string &name) {
     std::uniform_int_distribution<> bigDist(BIG_BRANCH_MIN, BIG_BRANCH_MAX);
     std::uniform_int_distribution<> middleDist(MIDDLE_BRANCH_MIN, MIDDLE_BRANCH_MAX);
 
-    auto* tree = new Branch("TREE", nullptr);           // корневой узел (он же ствол)
-    auto* branch1 = new Branch("BIG BRANCHES", tree);   // узел "большие ветки" (или "Бельдяшки")
-    tree->addBranch(branch1);
+    // инициализация корневого узла
+    auto* tree = new Branch("TREE", nullptr);
+    auto* bigBranch = new Branch("BIG BRANCHES", tree);
+    tree->addBranch(bigBranch);
 
     for (int i = 0; i < bigDist(gen); i++) {
+
         // добавляем большие ветки
-        string name1 = name + "Boss_" + to_string(i + 1);
-        branch1->addBranch(new Branch(name1, tree));
-        // добавляем средние ветки
-        for(int j = 0; j < middleDist(gen); )
+        string name1 = name + "B" + to_string(i + 1);
+        bigBranch->addBranch(new Branch(name1, tree));
+        Branch* subBranch = bigBranch->getBranchAt(i);
 
+        // добавляем средние ветки на каждую большую ветку
+        for(int j = 0; j < middleDist(gen); j++) {
+            string name2 = name1 + "_M" + to_string(j + 1);
+            subBranch->addBranch(new Branch(name2, bigBranch));
+        }
     }
-
-    //Branch middleBranch("MIDDLE BRANCHES", &branch1); // средние ветки
-
 
     return tree;
 }
