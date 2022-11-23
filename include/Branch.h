@@ -7,7 +7,7 @@ class Branch {
 private:
     std::string houseKeeper = "None";   // Имя гнома живущего в доме на ветке
     Branch* parent = nullptr;           // Указатель на родительскую ветку
-    std::vector<Branch *> branch;       // Коллекция дочерних веток
+    std::vector<Branch *> branch;       // Коллекция указателей на дочерние ветки
 
 public:
 
