@@ -30,9 +30,9 @@ const std::vector<Branch *> &Branch::getBranch() const {
 }
 
 Branch* Branch::getBranchAt(int index) {
+
     if (index < 0) return nullptr;
     if (index > branch.size()) return nullptr;
-
     return branch.at(index);
 }
 
