@@ -1,6 +1,19 @@
 #include <iostream>
+#include "use_lib.h"
+#include "Initials.h"
+#include "Branch.h"
+using namespace std;
+
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    Branch root("ROOT", nullptr);
+
+
+    for ()
+
+
+
+
     return 0;
 }
