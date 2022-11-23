@@ -1,13 +1,4 @@
 #include "Branch.h"
-#include <cassert>
-#include <utility>
-
-// конструкторы
-Branch::Branch() = default;
-
-Branch::Branch(const std::string &houseKeeper) {
-    this->houseKeeper = houseKeeper;
-}
 
 Branch::Branch(Branch *parent) {
     this->parent = parent;
@@ -18,31 +9,23 @@ Branch::Branch(const std::string &houseKeeper, Branch *parent) {
     this->parent = parent;
 }
 
-// добавление дочерней ветки
-void Branch::addBranch(const Branch& newBranch) {
-    branch.push_back(newBranch);
+void Branch::addBranch(Branch *newBranch) {
+    branch.push_back((Branch *const) newBranch);
 }
 
 int Branch::size() {
-    return (int)branch.size();
+    return (int) branch.size();
 }
 
-
-
-
-void Branch::setHouseKeeper(const std::string &newHouseKeeper) {
-    Branch::houseKeeper = newHouseKeeper;
-}
-
-std::string Branch::getHouseKeeper() const {
+const std::string &Branch::getHouseKeeper() const {
     return houseKeeper;
 }
 
+Branch *Branch::getParent() const {
+    return parent;
+}
 
-
-
-
-
-
-
+const std::vector<Branch *> &Branch::getBranch() const {
+    return branch;
+}
 
