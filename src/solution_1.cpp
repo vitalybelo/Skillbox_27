@@ -14,8 +14,6 @@ using namespace std;
  */
 void solution_1() {
 
-    setlocale1251();
-
     Tree tree;
     tree.generateTree();
 
@@ -29,8 +27,8 @@ void solution_1() {
     do{
         clearStdin();
         cout << "¬ведите пожалуйста им€ эльфа (или stop): ";
-        getline(cin, name);
 
+        getline(cin, name);
         tree.printSearch(name);
 
     } while (name != "stop");

@@ -5,7 +5,10 @@ add_executable(Skillbox_27
         use_lib.cpp
         Branch.cpp
         Tree.cpp
+        Geometry.cpp
+        Circle.cpp
         solution_1.cpp
+        solution_2.cpp
 
         )
 

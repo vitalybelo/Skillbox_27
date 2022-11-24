@@ -42,17 +42,6 @@ void Tree::print() {
     displayTree("",root);
 }
 
-void Tree::displayTree(const std::string &padding, Branch *dir) {
-
-    assert(dir != nullptr);
-    if (dir->size() == 0) return;
-    for (int i = 0; i < dir->size(); i++) {
-        std::cout << padding << dir->getBranchAt(i)->getHouseKeeper() << std::endl;
-        if (dir->getBranchAt(i)->size() > 0)
-            displayTree((padding + "\t"),dir->getBranchAt(i));
-    }
-}
-
 void Tree::printSearch(const std::string &seekName) {
     seek = nullptr;
     stopSeek = false;
@@ -63,6 +52,17 @@ void Tree::printSearch(const std::string &seekName) {
         displayTree("", seek);
     } else {
         std::cout << "\nСовпадений не найдено\n";
+    }
+}
+
+void Tree::displayTree(const std::string &padding, Branch *dir) {
+
+    assert(dir != nullptr);
+    if (dir->size() == 0) return;
+    for (int i = 0; i < dir->size(); i++) {
+        std::cout << padding << dir->getBranchAt(i)->getHouseKeeper() << std::endl;
+        if (dir->getBranchAt(i)->size() > 0)
+            displayTree((padding + "\t"),dir->getBranchAt(i));
     }
 }
 
