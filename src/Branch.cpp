@@ -1,16 +1,16 @@
+#include <cassert>
 #include "Branch.h"
-
-Branch::Branch(Branch *parent) {
-    this->parent = parent;
-}
 
 Branch::Branch(const std::string &houseKeeper, Branch *parent) {
     this->houseKeeper = houseKeeper;
     this->parent = parent;
 }
 
-void Branch::addBranch(Branch *newBranch) {
+Branch* Branch::addBranch(Branch *newBranch) {
+
+    assert(newBranch != nullptr);
     branch.push_back((Branch *const) newBranch);
+    return branch.at(branch.size() - 1);
 }
 
 int Branch::size() {

@@ -11,14 +11,14 @@ private:
 
 public:
 
-    explicit Branch(Branch *parent);
     Branch(const std::string &houseKeeper, Branch *parent);
 
     int size();
-    void addBranch (Branch *newBranch);
 
     const std::string &getHouseKeeper() const;
     const std::vector<Branch *> &getBranch() const;
+
+    Branch* addBranch (Branch *newBranch);
     Branch* getBranchAt(int index);
     Branch* getParent() const;
 
