@@ -5,6 +5,7 @@ add_executable(Skillbox_27
         use_lib.cpp
         Branch.cpp
         Tree.cpp
+        solution_1.cpp
 
         )
 
