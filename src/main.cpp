@@ -4,7 +4,7 @@ using namespace std;
 #include "solution.h"
 
 int main() {
-    setlocale1251();
+    setlocaleRus();
     /**
      * Автоматично создаются 5 деревьев, с ветками + еще ветками
      * Определение количества деревьев и ограничения находится в def_macros
