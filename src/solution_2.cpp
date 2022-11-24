@@ -2,6 +2,7 @@
 #include "use_lib.h"
 #include "Geometry.h"
 #include "Circle.h"
+#include "Square.h"
 using namespace std;
 
 
@@ -18,6 +19,9 @@ void solution_2() {
         if (command == "circle" || command == "c") {
             Circle circle = Circle::randomCircle("Œ –”∆ÕŒ—“‹");
             cout << circle << endl;
+        } else if (command == "square" || command == "s") {
+            Square square = Square::randomSquare(" ¬¿ƒ–¿“  ”¡» ¿");
+            cout << square << endl;
         }
 
     } while (command != "stop");

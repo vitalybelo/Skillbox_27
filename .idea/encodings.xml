@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/include/Circle.h" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/include/Circle.h" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Circle.cpp" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/Circle.h" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Geometry.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Square.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Tree.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/main.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/solution_1.cpp" charset="windows-1251" />
