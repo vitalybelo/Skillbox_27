@@ -1,11 +1,10 @@
 #pragma once
 #include "Geometry.h"
-#include <iostream>
 
 class Square : public Geometry {
 
 private:
-    std::string name;
+    std::string name = "SQUARE";
     double squareSide = 0;
     double squareAroundSide = 0;
 

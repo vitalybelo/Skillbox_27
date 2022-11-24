@@ -3,6 +3,7 @@
 #include "Geometry.h"
 #include "Circle.h"
 #include "Square.h"
+#include "Triangle.h"
 using namespace std;
 
 
@@ -22,6 +23,9 @@ void solution_2() {
         } else if (command == "square" || command == "s") {
             Square square = Square::randomSquare("ÊÂÀÄĞÀÒ ÊÓÁÈÊÀ");
             cout << square << endl;
+        } else if (command == "triangle" || command == "t") {
+            Triangle triangle = Triangle::randomTriangle("ĞÀÂÍÎÑÒÎĞÎÍÍÈÉ ÒĞÅÓÃÎËÜÍÈÊ");
+            cout << triangle << endl;
         }
 
     } while (command != "stop");

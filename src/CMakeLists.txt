@@ -8,6 +8,7 @@ add_executable(Skillbox_27
         Geometry.cpp
         Circle.cpp
         Square.cpp
+        Triangle.cpp
         solution_1.cpp
         solution_2.cpp
 

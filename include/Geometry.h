@@ -1,5 +1,5 @@
 #pragma once
-#include <ostream>
+#include <iostream>
 #include "Enum_struct.h"
 
 class Geometry {

@@ -1,4 +1,3 @@
-#include <ostream>
 #include "Geometry.h"
 #pragma once
 
