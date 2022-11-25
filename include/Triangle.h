@@ -4,9 +4,10 @@
 class Triangle : public Geometry {
 
 private:
-    std::string name;
+    std::string name {"TRIANGLE"};
     double side = 0;
-    double squareAroundSide = 0;
+    double squareAroundWidth = 0;
+    double squareAroundHeight = 0;
 
 public:
     // constructors

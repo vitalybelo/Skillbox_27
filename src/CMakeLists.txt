@@ -9,6 +9,7 @@ add_executable(Skillbox_27
         Circle.cpp
         Square.cpp
         Triangle.cpp
+        Rectangle.cpp
         solution_1.cpp
         solution_2.cpp
 

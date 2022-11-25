@@ -1,12 +1,20 @@
 #include <iostream>
 #include "use_lib.h"
-#include "Geometry.h"
 #include "Circle.h"
 #include "Square.h"
 #include "Triangle.h"
+#include "Rectangle.h"
 using namespace std;
 
-
+/**
+ * Решение воспринимает 5 команд:
+ * circle - автоматично создается круг и отображаются его параметры
+ * square - автоматично создается квадрат и отображаются его параметры
+ * triangle - автоматично создается треугольник и отображаются его параметры
+ * rectangle - автоматично создается прямоугольник и отображаются его параметры
+ * stop - выход
+ *
+ */
 void solution_2() {
     setlocale1251();
 
@@ -18,7 +26,7 @@ void solution_2() {
         command = getCommand();
 
         if (command == "circle" || command == "c") {
-            Circle circle = Circle::randomCircle("ОКРУЖНОСТЬ");
+            Circle circle = Circle::randomCircle("ОКРУЖНОСТЬ КРУГА");
             cout << circle << endl;
         } else if (command == "square" || command == "s") {
             Square square = Square::randomSquare("КВАДРАТ КУБИКА");
@@ -26,10 +34,13 @@ void solution_2() {
         } else if (command == "triangle" || command == "t") {
             Triangle triangle = Triangle::randomTriangle("РАВНОСТОРОННИЙ ТРЕУГОЛЬНИК");
             cout << triangle << endl;
+        } else if (command == "rectangle" || command == "r") {
+            Rectangle rectangle = Rectangle::randomRectangle("ПРЯМОУГОЛЬНИК ОБЫЧНЫЙ");
+            cout << rectangle << endl;
+        } else if (command != "stop") {
+            cout << "Команда не распознана\n\n";
         }
-
     } while (command != "stop");
-
 
 }
 

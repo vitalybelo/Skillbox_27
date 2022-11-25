@@ -4,7 +4,7 @@
 class Square : public Geometry {
 
 private:
-    std::string name = "SQUARE";
+    std::string name {"SQUARE"};
     double squareSide = 0;
     double squareAroundSide = 0;
 

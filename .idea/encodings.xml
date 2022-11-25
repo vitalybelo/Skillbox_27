@@ -2,9 +2,9 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/include/Circle.h" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/include/Circle.h" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Circle.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Geometry.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Rectangle.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Square.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Tree.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Triangle.cpp" charset="windows-1251" />

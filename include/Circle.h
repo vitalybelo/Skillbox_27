@@ -4,7 +4,7 @@
 class Circle : public Geometry {
 
 private:
-    std::string name{" –”√"};
+    std::string name{"CIRCLE"};
     double radius = 0;
     double squareAroundSide = 0;
 

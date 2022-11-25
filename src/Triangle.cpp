@@ -6,7 +6,8 @@ Triangle::Triangle() = default;
 Triangle::Triangle(const std::string &name, double side, const Geometry &geometry) {
     this->name = name;
     this->side = side;
-    this->squareAroundSide = side * (sqrt(3) / 2) + 0.1;
+    this->squareAroundWidth = side + 0.1;
+    this->squareAroundHeight = side * (sqrt(3) / 2) + 0.1;
     this->setCenter(geometry.getCenter());
     this->setColor(geometry.getColor());
 }
@@ -16,7 +17,7 @@ double Triangle::square() const {
 }
 
 double Triangle::squareAround() const {
-    return squareAroundSide * squareAroundSide;
+    return squareAroundWidth * squareAroundHeight;
 }
 
 Triangle Triangle::randomTriangle(const std::string &name) {
@@ -49,8 +50,8 @@ std::ostream &operator<<(std::ostream &os, const Triangle &triangle) {
     os << "Длина стороны: " << triangle.side << std::endl;
     os << "Площадь треугольника: " << triangle.square() << std::endl;
     os << "Площадь описывающего прямоугольника: " << triangle.squareAround() << std::endl;
-    os << "Высота описывающего прямоугольника: " << triangle.squareAroundSide << std::endl;
-    os << "Ширина описывающего прямоугольника: " << triangle.squareAroundSide << std::endl;
+    os << "Высота описывающего прямоугольника: " << triangle.squareAroundHeight << std::endl;
+    os << "Ширина описывающего прямоугольника: " << triangle.squareAroundWidth << std::endl;
     return os;
 }
 
