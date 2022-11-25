@@ -5,7 +5,7 @@
 class Branch {
 
 private:
-    std::string houseKeeper = "none";   // Имя ветки (для задания - имя гнома)
+    std::string houseKeeper = "none";   // Имя папки, файла (для задания - имя гнома)
     Branch* parent = nullptr;           // Указатель на родительскую ветку
     std::vector<Branch *> branch;       // Коллекция указателей на дочерние ветки
 

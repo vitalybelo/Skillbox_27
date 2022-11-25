@@ -12,6 +12,7 @@ add_executable(Skillbox_27
         Rectangle.cpp
         solution_1.cpp
         solution_2.cpp
+        solution_3.cpp
 
         )
 

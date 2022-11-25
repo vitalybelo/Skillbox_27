@@ -29,7 +29,8 @@ void solution_1() {
         cout << "¬ведите пожалуйста им€ эльфа (или stop): ";
 
         getline(cin, name);
-        tree.printSearch(name);
+        if (name != "stop")
+            tree.printSearch(name);
 
     } while (name != "stop");
 

@@ -16,7 +16,6 @@ using namespace std;
  *
  */
 void solution_2() {
-    setlocale1251();
 
     string command;
     do {
