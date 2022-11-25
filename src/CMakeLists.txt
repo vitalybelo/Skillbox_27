@@ -10,6 +10,9 @@ add_executable(Skillbox_27
         Square.cpp
         Triangle.cpp
         Rectangle.cpp
+        Employee.cpp
+        Team.cpp
+        Company.cpp
         solution_1.cpp
         solution_2.cpp
         solution_3.cpp
