@@ -5,5 +5,6 @@ class Company {
 
 private:
     std::string name;
+    std::vector<Team> teams;
 
 };
