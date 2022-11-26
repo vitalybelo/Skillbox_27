@@ -18,7 +18,7 @@ public:
     const Coordinate &getCenter() const;
     Color getColor() const;
 
-    friend std::ostream &operator<<(std::ostream &os, const Geometry &geometry);
+    friend std::ostream &operator<<(std::ostream &os, const Color &color);
 };
 
 

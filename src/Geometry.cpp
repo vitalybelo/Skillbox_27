@@ -24,16 +24,15 @@ Color Geometry::getColor() const {
     return color;
 }
 
-std::ostream &operator<<(std::ostream &os, const Geometry &geometry) {
+std::ostream &operator<<(std::ostream &os, const Color &enum_color) {
     std::string color;
-    switch (geometry.color) {
+    switch (enum_color) {
         case 1: color = "КРАСНЫЙ"; break;
         case 2: color = "СИНИЙ"; break;
         case 3: color = "ЗЕЛЕНЫЙ"; break;
         default: color = "БЕСЦВЕТНЫЙ";
     }
-    os << "Координаты центра: " << geometry.center.x << "," << geometry.center.y;
-    os << " (цвет: " << color << ")";
+    os << color;
     return os;
 }
 
