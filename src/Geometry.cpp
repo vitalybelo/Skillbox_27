@@ -27,13 +27,13 @@ Color Geometry::getColor() const {
 std::ostream &operator<<(std::ostream &os, const Geometry &geometry) {
     std::string color;
     switch (geometry.color) {
-        case 1: color = "ÊÐÀÑÍÛÉ"; break;
-        case 2: color = "ÑÈÍÈÉ"; break;
-        case 3: color = "ÇÅËÅÍÛÉ"; break;
-        default: color = "ÁÅÑÖÂÅÒÍÛÉ";
+        case 1: color = "ÐšÐ ÐÐ¡ÐÐ«Ð™"; break;
+        case 2: color = "Ð¡Ð˜ÐÐ˜Ð™"; break;
+        case 3: color = "Ð—Ð•Ð›Ð•ÐÐ«Ð™"; break;
+        default: color = "Ð‘Ð•Ð¡Ð¦Ð’Ð•Ð¢ÐÐ«Ð™";
     }
-    os << "Êîîðäèíàòû öåíòðà: " << geometry.center.x << "," << geometry.center.y;
-    os << " (öâåò: " << color << ")";
+    os << "ÐšÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ñ‹ Ñ†ÐµÐ½Ñ‚Ñ€Ð°: " << geometry.center.x << "," << geometry.center.y;
+    os << " (Ñ†Ð²ÐµÑ‚: " << color << ")";
     return os;
 }
 

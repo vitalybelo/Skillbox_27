@@ -37,21 +37,21 @@ double Circle::squareAround() const {
 std::ostream &operator<<(std::ostream &os, const Circle &circle) {
     std::string color;
     switch (circle.getColor()) {
-        case 1: color = "ÊÐÀÑÍÛÉ"; break;
-        case 2: color = "ÑÈÍÈÉ"; break;
-        case 3: color = "ÇÅËÅÍÛÉ"; break;
-        default: color = "ÁÅÑÖÂÅÒÍÛÉ";
+        case 1: color = "ÐšÐ ÐÐ¡ÐÐ«Ð™"; break;
+        case 2: color = "Ð¡Ð˜ÐÐ˜Ð™"; break;
+        case 3: color = "Ð—Ð•Ð›Ð•ÐÐ«Ð™"; break;
+        default: color = "Ð‘Ð•Ð¡Ð¦Ð’Ð•Ð¢ÐÐ«Ð™";
     }
     os << std::endl;
-    os << "Íàçâàíèå ôèãóðû: " << circle.name << std::endl;
-    os << "Öåíòð ôèãóðû: x = " << circle.getCenter().x;
+    os << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << circle.name << std::endl;
+    os << "Ð¦ÐµÐ½Ñ‚Ñ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: x = " << circle.getCenter().x;
     os << ", y = " << circle.getCenter().y << std::endl;
-    os << "Öâåò ôèãóðû: " << color << std::endl;
-    os << "Ðàäèóñ êðóãà: " << circle.radius << std::endl;
-    os << "Ïëîùàäü êðóãà: " << circle.square() << std::endl;
-    os << "Ïëîùàäü îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << circle.squareAround() << std::endl;
-    os << "Âûñîòà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << circle.squareAroundSide << std::endl;
-    os << "Øèðèíà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << circle.squareAroundSide << std::endl;
+    os << "Ð¦Ð²ÐµÑ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << color << std::endl;
+    os << "Ð Ð°Ð´Ð¸ÑƒÑ ÐºÑ€ÑƒÐ³Ð°: " << circle.radius << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ ÐºÑ€ÑƒÐ³Ð°: " << circle.square() << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << circle.squareAround() << std::endl;
+    os << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << circle.squareAroundSide << std::endl;
+    os << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << circle.squareAroundSide << std::endl;
     return os;
 }
 

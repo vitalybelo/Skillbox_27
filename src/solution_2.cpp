@@ -7,12 +7,12 @@
 using namespace std;
 
 /**
- * Решение воспринимает 5 команд:
- * circle - автоматично создается круг и отображаются его параметры
- * square - автоматично создается квадрат и отображаются его параметры
- * triangle - автоматично создается треугольник и отображаются его параметры
- * rectangle - автоматично создается прямоугольник и отображаются его параметры
- * stop - выход
+ * Р РµС€РµРЅРёРµ РІРѕСЃРїСЂРёРЅРёРјР°РµС‚ 5 РєРѕРјР°РЅРґ:
+ * circle - Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ СЃРѕР·РґР°РµС‚СЃСЏ РєСЂСѓРі Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РµРіРѕ РїР°СЂР°РјРµС‚СЂС‹
+ * square - Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ СЃРѕР·РґР°РµС‚СЃСЏ РєРІР°РґСЂР°С‚ Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РµРіРѕ РїР°СЂР°РјРµС‚СЂС‹
+ * triangle - Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ СЃРѕР·РґР°РµС‚СЃСЏ С‚СЂРµСѓРіРѕР»СЊРЅРёРє Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РµРіРѕ РїР°СЂР°РјРµС‚СЂС‹
+ * rectangle - Р°РІС‚РѕРјР°С‚РёС‡РЅРѕ СЃРѕР·РґР°РµС‚СЃСЏ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРє Рё РѕС‚РѕР±СЂР°Р¶Р°СЋС‚СЃСЏ РµРіРѕ РїР°СЂР°РјРµС‚СЂС‹
+ * stop - РІС‹С…РѕРґ
  *
  */
 void solution_2() {
@@ -20,24 +20,24 @@ void solution_2() {
     string command;
     do {
         clearStdin();
-        cout << "Фигуры (circle, square, triangle, rectangle)\n";
-        cout << "Введите название, фигура будет создана автоматически: ";
+        cout << "Р¤РёРіСѓСЂС‹ (circle, square, triangle, rectangle)\n";
+        cout << "Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ, С„РёРіСѓСЂР° Р±СѓРґРµС‚ СЃРѕР·РґР°РЅР° Р°РІС‚РѕРјР°С‚РёС‡РµСЃРєРё: ";
         command = getCommand();
 
         if (command == "circle" || command == "c") {
-            Circle circle = Circle::randomCircle("ОКРУЖНОСТЬ КРУГА");
+            Circle circle = Circle::randomCircle("РћРљР РЈР–РќРћРЎРўР¬ РљР РЈР“Рђ");
             cout << circle << endl;
         } else if (command == "square" || command == "s") {
-            Square square = Square::randomSquare("КВАДРАТ КУБИКА");
+            Square square = Square::randomSquare("РљР’РђР”Р РђРў РљРЈР‘РРљРђ");
             cout << square << endl;
         } else if (command == "triangle" || command == "t") {
-            Triangle triangle = Triangle::randomTriangle("РАВНОСТОРОННИЙ ТРЕУГОЛЬНИК");
+            Triangle triangle = Triangle::randomTriangle("Р РђР’РќРћРЎРўРћР РћРќРќРР™ РўР Р•РЈР“РћР›Р¬РќРРљ");
             cout << triangle << endl;
         } else if (command == "rectangle" || command == "r") {
-            Rectangle rectangle = Rectangle::randomRectangle("ПРЯМОУГОЛЬНИК ОБЫЧНЫЙ");
+            Rectangle rectangle = Rectangle::randomRectangle("РџР РЇРњРћРЈР“РћР›Р¬РќРРљ РћР‘Р«Р§РќР«Р™");
             cout << rectangle << endl;
         } else if (command != "stop") {
-            cout << "Команда не распознана\n\n";
+            cout << "РљРѕРјР°РЅРґР° РЅРµ СЂР°СЃРїРѕР·РЅР°РЅР°\n\n";
         }
     } while (command != "stop");
 

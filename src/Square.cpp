@@ -36,21 +36,21 @@ Square Square::randomSquare(const std::string &name) {
 std::ostream &operator<<(std::ostream &os, const Square &square) {
     std::string color;
     switch (square.getColor()) {
-        case 1: color = "ÊÐÀÑÍÛÉ"; break;
-        case 2: color = "ÑÈÍÈÉ"; break;
-        case 3: color = "ÇÅËÅÍÛÉ"; break;
-        default: color = "ÁÅÑÖÂÅÒÍÛÉ";
+        case 1: color = "ÐšÐ ÐÐ¡ÐÐ«Ð™"; break;
+        case 2: color = "Ð¡Ð˜ÐÐ˜Ð™"; break;
+        case 3: color = "Ð—Ð•Ð›Ð•ÐÐ«Ð™"; break;
+        default: color = "Ð‘Ð•Ð¡Ð¦Ð’Ð•Ð¢ÐÐ«Ð™";
     }
     os << std::endl;
-    os << "Íàçâàíèå ôèãóðû: " << square.name << std::endl;
-    os << "Öåíòð ôèãóðû: x = " << square.getCenter().x;
+    os << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << square.name << std::endl;
+    os << "Ð¦ÐµÐ½Ñ‚Ñ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: x = " << square.getCenter().x;
     os << ", y = " << square.getCenter().y << std::endl;
-    os << "Öâåò ôèãóðû: " << color << std::endl;
-    os << "Äëèíà ñòîðîíû: " << square.squareSide << std::endl;
-    os << "Ïëîùàäü êâàäðàòà: " << square.square() << std::endl;
-    os << "Ïëîùàäü îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << square.squareAround() << std::endl;
-    os << "Âûñîòà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << square.squareAroundSide << std::endl;
-    os << "Øèðèíà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << square.squareAroundSide << std::endl;
+    os << "Ð¦Ð²ÐµÑ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << color << std::endl;
+    os << "Ð”Ð»Ð¸Ð½Ð° ÑÑ‚Ð¾Ñ€Ð¾Ð½Ñ‹: " << square.squareSide << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð°: " << square.square() << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << square.squareAround() << std::endl;
+    os << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << square.squareAroundSide << std::endl;
+    os << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << square.squareAroundSide << std::endl;
     return os;
 }
 

@@ -40,22 +40,22 @@ Rectangle Rectangle::randomRectangle(const std::string &name) {
 std::ostream &operator<<(std::ostream &os, const Rectangle &rectangle) {
     std::string color;
     switch (rectangle.getColor()) {
-        case 1: color = "ÊÐÀÑÍÛÉ"; break;
-        case 2: color = "ÑÈÍÈÉ"; break;
-        case 3: color = "ÇÅËÅÍÛÉ"; break;
-        default: color = "ÁÅÑÖÂÅÒÍÛÉ";
+        case 1: color = "ÐšÐ ÐÐ¡ÐÐ«Ð™"; break;
+        case 2: color = "Ð¡Ð˜ÐÐ˜Ð™"; break;
+        case 3: color = "Ð—Ð•Ð›Ð•ÐÐ«Ð™"; break;
+        default: color = "Ð‘Ð•Ð¡Ð¦Ð’Ð•Ð¢ÐÐ«Ð™";
     }
     os << std::endl;
-    os << "Íàçâàíèå ôèãóðû: " << rectangle.name << std::endl;
-    os << "Öåíòð ôèãóðû: x = " << rectangle.getCenter().x;
+    os << "ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << rectangle.name << std::endl;
+    os << "Ð¦ÐµÐ½Ñ‚Ñ€ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: x = " << rectangle.getCenter().x;
     os << ", y = " << rectangle.getCenter().y << std::endl;
-    os << "Öâåò ôèãóðû: " << color << std::endl;
-    os << "Âûñîòà ïðÿìîóãîëüíèêà: " << rectangle.height << std::endl;
-    os << "Øèðèíà ïðÿìîóãîëüíèêà: " << rectangle.width << std::endl;
-    os << "Ïëîùàäü ïðÿìîóãîëüíèêà: " << rectangle.square() << std::endl;
-    os << "Ïëîùàäü îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << rectangle.squareAround() << std::endl;
-    os << "Âûñîòà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << rectangle.squareAroundHeight << std::endl;
-    os << "Øèðèíà îïèñûâàþùåãî ïðÿìîóãîëüíèêà: " << rectangle.squareAroundWidth << std::endl;
+    os << "Ð¦Ð²ÐµÑ‚ Ñ„Ð¸Ð³ÑƒÑ€Ñ‹: " << color << std::endl;
+    os << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.height << std::endl;
+    os << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.width << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.square() << std::endl;
+    os << "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.squareAround() << std::endl;
+    os << "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.squareAroundHeight << std::endl;
+    os << "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ð¾Ð¿Ð¸ÑÑ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ð¿Ñ€ÑÐ¼Ð¾ÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << rectangle.squareAroundWidth << std::endl;
     return os;
 
 }

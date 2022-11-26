@@ -22,8 +22,8 @@ std::ostream &operator<<(std::ostream &os, const Employee &employee) {
         case 3: work = "DO WORK CLASS C"; break;
         default: work = "";
     }
-    os << "Сотрудник: " << employee.name << " || должность: \"" + post + "\"";
-    if (employee.work != NOTHING) os << " || выполняет работу: " << work << "";
+    os << "РЎРѕС‚СЂСѓРґРЅРёРє: " << employee.name << " || РґРѕР»Р¶РЅРѕСЃС‚СЊ: \"" + post + "\"";
+    if (employee.work != NOTHING) os << " || РІС‹РїРѕР»РЅСЏРµС‚ СЂР°Р±РѕС‚Сѓ: " << work << "";
     return os;
 }
 

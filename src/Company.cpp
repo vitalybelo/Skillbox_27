@@ -18,7 +18,7 @@ void Company::generateCompany(int departmentNumbers) {
     std::uniform_int_distribution<> team_dist(5,8);
 
     for (int i = 1; i <= departmentNumbers; i++) {
-        Team team{idCount++,"Отдел №" + std::to_string(i)};
+        Team team{idCount++,"РћС‚РґРµР» в„–" + std::to_string(i)};
         team.generateTeam(team_dist(gen));
         teams.push_back(team);
     }
@@ -31,23 +31,23 @@ bool Company::simulateCompanyWork(int order) {
     std::uniform_int_distribution<> bool_dist(0,1);
 
     bool busyCheck = true;
-    // загружаем все отделы, даже секретаря
+    // Р·Р°РіСЂСѓР¶Р°РµРј РІСЃРµ РѕС‚РґРµР»С‹, РґР°Р¶Рµ СЃРµРєСЂРµС‚Р°СЂСЏ
     for (auto & team : teams) {
         order += team.getId();
         std::mt19937 gen(order);
 
-        // Босс и менеджеры вне игры
+        // Р‘РѕСЃСЃ Рё РјРµРЅРµРґР¶РµСЂС‹ РІРЅРµ РёРіСЂС‹
         for (int i = 1; i < team.size(); i++) {
-            // сотрудник уже занят какой то работой ?
+            // СЃРѕС‚СЂСѓРґРЅРёРє СѓР¶Рµ Р·Р°РЅСЏС‚ РєР°РєРѕР№ С‚Рѕ СЂР°Р±РѕС‚РѕР№ ?
             Work work = team.getEmployeeWorkAt(i);
-            // если да переходим к следующему
+            // РµСЃР»Рё РґР° РїРµСЂРµС…РѕРґРёРј Рє СЃР»РµРґСѓСЋС‰РµРјСѓ
             if (work != NOTHING) continue;
-            // дать сотруднику работу ?
+            // Р°С… РІРѕС‚ РєР°Рє, РЅРµ Р·Р°РЅСЏС‚, РґР°С‚СЊ СЃРѕС‚СЂСѓРґРЅРёРєСѓ СЂР°Р±РѕС‚Сѓ ?
             if (bool_dist(gen)) {
-                // конечно - дать работу
+                // РєРѕРЅРµС‡РЅРѕ - РґР°С‚СЊ СЂР°Р±РѕС‚Сѓ
                 team.setEmployeeWorkAt(i, static_cast<Work>(work_dist(gen)));
             }
-            // если работник остался без работы - значит продолжаем приказывать
+            // РµСЃР»Рё СЂР°Р±РѕС‚РЅРёРє РѕСЃС‚Р°Р»СЃСЏ С‚Р°РєРё Р±РµР· СЂР°Р±РѕС‚С‹ - Р·РЅР°С‡РёС‚ РїСЂРѕРґРѕР»Р¶Р°РµРј РїСЂРёРєР°Р·С‹РІР°С‚СЊ
             if (busyCheck && team.getEmployeeWorkAt(i) == NOTHING) busyCheck = false;
         }
     }
@@ -55,7 +55,7 @@ bool Company::simulateCompanyWork(int order) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Company &company) {
-    os << "\nКомпания: " << company.name << std::endl << std::endl;
+    os << "\nРљРѕРјРїР°РЅРёСЏ: " << company.name << std::endl << std::endl;
 
     for (const auto & team : company.teams) {
         std::cout << team << std::endl;

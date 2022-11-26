@@ -13,19 +13,19 @@ Branch* Tree::generateTree() {
 
     for (int i_tree = 0; i_tree < TREES_AMOUNT; i_tree++)
     {
-        // èíèöèàëèçàöèÿ íîâîãî äåðåâà
+        // Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð°Ñ†Ð¸Ñ Ð½Ð¾Ð²Ð¾Ð³Ð¾ Ð´ÐµÑ€ÐµÐ²Ð°
         std::string t_name = "T" + std::to_string(i_tree + 1);
-        auto *tree = root->addBranch(new Branch("ÄÅÐÅÂÎ " + t_name, root));
+        auto *tree = root->addBranch(new Branch("Ð”Ð•Ð Ð•Ð’Ðž " + t_name, root));
 
         for (int i_branch = 0; i_branch < bigDist(gen); i_branch++)
         {
-            // äîáàâëÿåì áîëüøóþ âåòêó íà äåðåâî
+            // Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ Ð±Ð¾Ð»ÑŒÑˆÑƒÑŽ Ð²ÐµÑ‚ÐºÑƒ Ð½Ð° Ð´ÐµÑ€ÐµÐ²Ð¾
             std::string b_name = t_name + "B" + std::to_string(i_branch + 1);
             auto *branch = tree->addBranch(new Branch(b_name, tree));
 
             for (int i_subBranch = 0; i_subBranch < middleDist(gen); i_subBranch++)
             {
-                // äîáàâëÿåì ñðåäíèå âåòêè íà êàæäóþ áîëüøóþ âåòêó äåðåâà
+                // Ð´Ð¾Ð±Ð°Ð²Ð»ÑÐµÐ¼ ÑÑ€ÐµÐ´Ð½Ð¸Ðµ Ð²ÐµÑ‚ÐºÐ¸ Ð½Ð° ÐºÐ°Ð¶Ð´ÑƒÑŽ Ð±Ð¾Ð»ÑŒÑˆÑƒÑŽ Ð²ÐµÑ‚ÐºÑƒ Ð´ÐµÑ€ÐµÐ²Ð°
                 std::string sb_name = b_name + "_M" + std::to_string(i_subBranch + 1);
                 branch->addBranch(new Branch(sb_name, branch));
             }
@@ -47,11 +47,11 @@ void Tree::printSearch(const std::string &seekName) {
     stopSeek = false;
     seekNameIntoTree((std::string &)seekName,root);
     if (seek != nullptr) {
-        std::cout << "\nÑîñåäè ïî áîëüøîé âåòêå:\n";
+        std::cout << "\nÐ¡Ð¾ÑÐµÐ´Ð¸ Ð¿Ð¾ Ð±Ð¾Ð»ÑŒÑˆÐ¾Ð¹ Ð²ÐµÑ‚ÐºÐµ:\n";
         std::cout << seek->getHouseKeeper() << std::endl;
         displayTree("", seek);
     } else {
-        std::cout << "\nÑîâïàäåíèé íå íàéäåíî\n";
+        std::cout << "\nÐ¡Ð¾Ð²Ð¿Ð°Ð´ÐµÐ½Ð¸Ð¹ Ð½Ðµ Ð½Ð°Ð¹Ð´ÐµÐ½Ð¾\n";
     }
 }
 
