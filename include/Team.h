@@ -1,8 +1,5 @@
 #include "Employee.h"
-#include <random>
 #include <vector>
-#include <ostream>
-
 #pragma once
 
 class Team {
@@ -10,16 +7,18 @@ class Team {
 private:
     int id;
     std::string name;
-    std::vector<Employee> employees;
+    std::vector<Employee> team;
 
 public:
     // constructor
-    explicit Team(const std::string &name);
+    Team(int id, const std::string &name);
 
-    // own methods
+    // methods
     int size();
-    void generateTeam(int employeeSize);
+    void addEmployee(const Employee &employee);
+    void generateTeam(int employeesNumbers);
 
     // streaming out
     friend std::ostream &operator<<(std::ostream &os, const Team &team);
+
 };

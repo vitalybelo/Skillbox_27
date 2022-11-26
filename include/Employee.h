@@ -1,7 +1,7 @@
 #include <iostream>
 #pragma once
 
-enum Post { BOSS = 0, MANAGER, WORKER, NOBODY, UNDER_NOBODY, WORSE_UNDER_NOBODY, SHOES_DIRT };
+enum Post { BOSS = 0, MANAGER, WORKER, SECRETARY, NOBODY, UNDER_NOBODY, WORSE_UNDER_NOBODY, SHOES_DIRT };
 
 class Employee {
 
@@ -10,10 +10,12 @@ private:
     Post post = WORKER;
 
 public:
+    // constructors
     Employee(const char *name, Post post);
     Employee(const std::string &name, Post post);
 
-    void setName(const std::string &newName);
+    // getters & setters
+    void setName(std::string newName);
     void setPost(Post post);
 
     std::string getName() const;

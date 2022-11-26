@@ -1,44 +1,43 @@
-#include <random>
-#include <cassert>
 #include "Employee.h"
 #include "Team.h"
+#include <cassert>
 
-Team::Team(const std::string &name) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(100000, 199999);
+Team::Team(int id, const std::string &name) {
+    this->id = id;
     this->name = name;
-    id = dist(gen);
 }
 
 int Team::size() {
-    return (int)employees.size();
+    return (int)team.size();
 }
 
-void Team::generateTeam(int employeeSize) {
+void Team::addEmployee(const Employee &employee) {
+    team.emplace_back(employee);
+}
 
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_int_distribution<> dist(10, 99);
+void Team::generateTeam(int employeesNumbers) {
 
-    assert(employeeSize > 0);
-    std::string managerName = "Manager (" + name + ")";
-    employees.emplace_back(managerName, MANAGER);
+    assert(employeesNumbers > 0);
+    std::string managerName = "Менеджер (" + name + ")";
+    team.emplace_back(managerName, MANAGER);
 
-    for (int i = 1; i < employeeSize; i++) {
-        std::string workerName = "worker_" + std::to_string(i) + " (" + name + ")";
-        employees.emplace_back(workerName, WORKER);
+    for (int i = 1; i < employeesNumbers; i++) {
+        std::string workerName = "рабочий_" + std::to_string(i) + " (" + name + ")";
+        team.emplace_back(workerName, WORKER);
     }
 
 }
 
-std::ostream &operator<<(std::ostream &os, const Team &team) {
+std::ostream &operator<<(std::ostream &os, const Team &teamOut) {
 
-    os << "\n\tОтдел: " << team.name << std::endl;
-    os << "\tРуководитель: " << team.employees.at(0).getName() << std::endl;
-    os << "\tКоличество работников: " << team.employees.size() << std::endl;
-    for (int i = 1; i <= team.employees.size() - 1; i++) {
-        os << "\t\t" << i << ". Сотрудник: " << team.employees.at(i).getName() << std::endl;
+    os << "\n\tОтдел: " << teamOut.name << " id: (" << teamOut.id << ")" << std::endl;
+    os << "\tРуководитель: " << teamOut.team.at(0).getName() << std::endl;
+    os << "\tОбщее количество сотрудников: " << teamOut.team.size() << std::endl;
+    for (int i = 1; i <= teamOut.team.size() - 1; i++) {
+        os << "\t\t" << i << ". Сотрудник: " << teamOut.team.at(i).getName() << std::endl;
     }
     return os;
 }
+
+
+

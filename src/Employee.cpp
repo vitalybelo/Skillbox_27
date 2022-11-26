@@ -1,23 +1,23 @@
 #include "Employee.h"
 
+#include <utility>
+
 Employee::Employee(const char *name, Post post) {
     this->name = name;
-    if (post < 2)
-        this->post = post;
+    this->post = post;
 }
 
 Employee::Employee(const std::string &name, Post post) {
     this->name = name;
-    if (post < 2)
-        this->post = post;
+    this->post = post;
 }
 
 std::string Employee::getName() const {
     return name;
 }
 
-void Employee::setName(const std::string &newName) {
-    Employee::name = newName;
+void Employee::setName(std::string newName) {
+    Employee::name = std::move(newName);
 }
 
 Post Employee::getPost() const {

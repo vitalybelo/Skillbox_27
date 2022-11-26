@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/include/Circle.h" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/Circle.cpp" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/Company.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Geometry.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Rectangle.cpp" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/Square.cpp" charset="windows-1251" />
