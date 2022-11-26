@@ -1,50 +1,69 @@
 #include <random>
-#include <cassert>
+#include "Employee.h"
 #include "Team.h"
 #include "Company.h"
 
 
 Company::Company(const std::string &name) {
-    idCount = 0;
     this->name = name;
-    addTeam(Team{idCount++,"BOSS OFFICE"});
+    teams.emplace_back(0,"BOSS OFFICE");
     teams.at(0).addEmployee(Employee{"John Smith",BOSS});           // reserve Boss vacation
     teams.at(0).addEmployee(Employee{"Joanna Smithy",SECRETARY});   // reserve Secretary vacation
-}
-
-int Company::size() {
-    return (int) teams.size();
-}
-
-void Company::addTeam(const Team &team) {
-    teams.emplace_back(team);
-}
-
-Team Company::getTeamAt(int index) {
-    assert(index >= 0 && index < teams.size());
-    return teams.at(index);
+    idCount = 1;
 }
 
 void Company::generateCompany(int departmentNumbers) {
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<> team_dist (5,8);
+    std::uniform_int_distribution<> team_dist(5,8);
 
-    for (int i = 1; i <= departmentNumbers; i++)
-    {
+    for (int i = 1; i <= departmentNumbers; i++) {
         Team team{idCount++,"Отдел №" + std::to_string(i)};
         team.generateTeam(team_dist(gen));
-        addTeam(team);
+        teams.push_back(team);
     }
+}
+
+bool Company::simulateCompanyWork(int order) {
+
+    std::random_device rd;
+    std::uniform_int_distribution<> work_dist(1,3);
+    std::uniform_int_distribution<> bool_dist(0,1);
+
+    bool busyCheck = true;
+    // загружаем все отделы, даже секретаря
+    for (auto & team : teams) {
+        order += team.getId();
+        std::mt19937 gen(order);
+
+        // Босс и менеджеры вне игры
+        for (int i = 1; i < team.size(); i++) {
+            // сотрудник уже занят какой то работой ?
+            Work work = team.getEmployeeWorkAt(i);
+            // если да переходим к следующему
+            if (work != NOTHING) continue;
+            // дать сотруднику работу ?
+            if (bool_dist(gen)) {
+                // конечно - дать работу
+                team.setEmployeeWorkAt(i, static_cast<Work>(work_dist(gen)));
+            }
+            // если работник остался без работы - значит продолжаем приказывать
+            if (busyCheck && team.getEmployeeWorkAt(i) == NOTHING) busyCheck = false;
+        }
+    }
+    return busyCheck;
 }
 
 std::ostream &operator<<(std::ostream &os, const Company &company) {
-    os << "\nКомпания: " << company.name << std::endl;
-    for (const Team& team : company.teams) {
-        os << team << std::endl;
+    os << "\nКомпания: " << company.name << std::endl << std::endl;
+
+    for (const auto & team : company.teams) {
+        std::cout << team << std::endl;
     }
+
     return os;
 }
+
 
 
 

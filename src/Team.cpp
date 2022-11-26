@@ -12,7 +12,7 @@ int Team::size() {
 }
 
 void Team::addEmployee(const Employee &employee) {
-    team.emplace_back(employee);
+    team.push_back(employee);
 }
 
 void Team::generateTeam(int employeesNumbers) {
@@ -30,14 +30,31 @@ void Team::generateTeam(int employeesNumbers) {
 
 std::ostream &operator<<(std::ostream &os, const Team &teamOut) {
 
-    os << "\n\tОтдел: " << teamOut.name << " id: (" << teamOut.id << ")" << std::endl;
-    os << "\tРуководитель: " << teamOut.team.at(0).getName() << std::endl;
+    os << "\tОтдел: " << teamOut.name << " id: (" << teamOut.id << ")" << std::endl;
+    os << "\tРуководитель: " << teamOut.team.at(0).name << std::endl;
     os << "\tОбщее количество сотрудников: " << teamOut.team.size() << std::endl;
     for (int i = 1; i <= teamOut.team.size() - 1; i++) {
-        os << "\t\t" << i << ". Сотрудник: " << teamOut.team.at(i).getName() << std::endl;
+        os << "\t\t" << i << ". " << teamOut.team.at(i) << std::endl;
     }
     return os;
 }
+
+void Team::setEmployeeWorkAt(int index, const Work &work) {
+
+    assert(index >=0 && index < team.size());
+    team.at(index).work = work;
+}
+
+Work Team::getEmployeeWorkAt(int index) {
+
+    assert(index >=0 && index < team.size());
+    return team.at(index).work;
+}
+
+int Team::getId() const {
+    return id;
+}
+
 
 
 

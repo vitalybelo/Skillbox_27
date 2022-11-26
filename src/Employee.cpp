@@ -1,32 +1,32 @@
 #include "Employee.h"
 
-#include <utility>
-
-Employee::Employee(const char *name, Post post) {
-    this->name = name;
-    this->post = post;
-}
-
 Employee::Employee(const std::string &name, Post post) {
     this->name = name;
     this->post = post;
+    this->work = NOTHING;
 }
 
-std::string Employee::getName() const {
-    return name;
+std::ostream &operator<<(std::ostream &os, const Employee &employee) {
+    std::string post;
+    switch (employee.post) {
+        case 0: post = "BOSS"; break;
+        case 1: post = "MANAGER"; break;
+        case 2: post = "WORKER"; break;
+        case 3: post = "SECRETARY"; break;
+        default: post = "NOBODY";
+    }
+    std::string work;
+        switch (employee.work) {
+        case 1: work = "DO WORK CLASS A"; break;
+        case 2: work = "DO WORK CLASS B"; break;
+        case 3: work = "DO WORK CLASS C"; break;
+        default: work = "";
+    }
+    os << "Сотрудник: " << employee.name << " || должность: \"" + post + "\"";
+    if (employee.work != NOTHING) os << " || выполняет работу: " << work << "";
+    return os;
 }
 
-void Employee::setName(std::string newName) {
-    Employee::name = std::move(newName);
-}
-
-Post Employee::getPost() const {
-    return post;
-}
-
-void Employee::setPost(Post newPost) {
-    Employee::post = newPost;
-}
 
 
 

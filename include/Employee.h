@@ -2,23 +2,19 @@
 #pragma once
 
 enum Post { BOSS = 0, MANAGER, WORKER, SECRETARY, NOBODY, UNDER_NOBODY, WORSE_UNDER_NOBODY, SHOES_DIRT };
+enum Work { NOTHING = 0, WORK_CLASS_A, WORK_CLASS_B, WORK_CLASS_C };
 
 class Employee {
 
-private:
+public:
+
     std::string name = "John Smith";
+    Work work = NOTHING;
     Post post = WORKER;
 
-public:
     // constructors
-    Employee(const char *name, Post post);
     Employee(const std::string &name, Post post);
 
-    // getters & setters
-    void setName(std::string newName);
-    void setPost(Post post);
-
-    std::string getName() const;
-    Post getPost() const;
-
+    // streaming out
+    friend std::ostream &operator<<(std::ostream &os, const Employee &employee);
 };

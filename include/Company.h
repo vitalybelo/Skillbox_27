@@ -1,4 +1,4 @@
-#include <ostream>
+#include "Employee.h"
 #include "Team.h"
 #pragma once
 
@@ -14,10 +14,8 @@ public:
     explicit Company(const std::string &name);
 
     // methods
-    int size();
-    void addTeam(const Team &team);
-    Team getTeamAt(int index);
     void generateCompany(int departmentNumbers);
+    bool simulateCompanyWork(int order);
 
     // streaming out
     friend std::ostream &operator<<(std::ostream &os, const Company &company);
